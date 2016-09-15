@@ -1,10 +1,6 @@
 const notifier = require('node-notifier');
 const path = require('path');
 
-process.argv.forEach(function (val, index, array) {
-  console.log(index + ': ' + val);
-});
-
 
 var sendNotification = function(title, message, icon) {
 
@@ -30,9 +26,22 @@ var sendNotification = function(title, message, icon) {
 
 };
 
-console.log(process.argv);
-
 // --message argument for message argument
 // --title   argument for notification title 
+function parseArguments(argsArr) {
+    var args = {};
 
-// sendNotification('Title', 'deneme');
+    argsArr.forEach(function (val, index, array) {
+        if(val.indexOf('--message=') != -1) {
+            args.message = val.split('=')[1];
+        } else if (val.indexOf('--title=') != -1) {
+            args.title = val.split('=')[1];
+        }
+    });
+
+    return args;
+}
+
+var args = parseArguments(process.argv);
+console.log('parsed', args);
+sendNotification(args.title, args.message);
