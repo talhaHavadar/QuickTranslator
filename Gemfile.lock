@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.8)
+    clipboard (1.1.1)
     json (1.8.3)
     mime-types (1.25.1)
     rest-client (1.6.9)
@@ -15,6 +16,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  clipboard
+  ffi
   unirest
 
 BUNDLED WITH
