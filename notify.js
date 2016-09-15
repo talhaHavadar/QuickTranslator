@@ -9,7 +9,7 @@ var sendNotification = function(title, message, icon) {
     notifier.notify({
         title: title,
         message: message,
-        icon: icon, //path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons)
+        icon: path.join(__dirname, path.join('images', 'profile_fb.jpg')), // Absolute path (doesn't work on balloons)
         sound: true, // Only Notification Center or Windows Toasters
         wait: false // Wait with callback, until user action is taken against notification
     }, function(err, response) {
