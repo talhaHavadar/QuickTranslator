@@ -26,6 +26,9 @@ Encoding.default_internal = Encoding::UTF_8
 
 
 translator = Translator.new
+
+translator.dest_lang = Translator::TURKISH
+
 converted_result = translator.translate URI.escape Clipboard.paste
 notify(converted_result)
 
