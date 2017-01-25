@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require_relative '../config'
 require 'unirest'
 
@@ -17,9 +19,9 @@ class Translator
     def translate(text)
 
         url = API_URL % [Config::API_KEY, text, self.dest_lang.to_s]
-        
+
         response = Unirest.get(url).body
-        
+
         result = {}
 
         if response['code'] == 200

@@ -5,7 +5,6 @@ const path = require('path');
 var sendNotification = function(title, message, icon) {
 
     icon = icon || undefined;
-    
     notifier.notify({
         title: title,
         message: message,
@@ -18,7 +17,7 @@ var sendNotification = function(title, message, icon) {
 };
 
 // --message argument for message argument
-// --title   argument for notification title 
+// --title   argument for notification title
 function parseArguments(argsArr) {
     var args = {};
 
